@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import SkillList from './skill-list';
 import NewSkill from './new-skill';
-//import skillsData from './skills.json';
+import skillsData from './skills.json';
 import SkillAdvice from './skill-advice';
 import { useUserAuth } from '../_utils/auth-context';
-import { getSkills, addSkill, deleteSkill } from '../_services/skillSharing-service'; 
+//import { getSkills, addSkill, deleteSkill } from '../_services/skillSharing-service'; 
 
 function Page() {
     const { user } = useUserAuth();
-    const [skills, setSkills] = useState([]);
+    const [skills, setSkills] = useState(skillsData);
     const [selectedSkillName, setSelectedSkillName] = useState(''); // New state
     
     
@@ -29,11 +29,15 @@ function Page() {
 
 
   const handleAddSkill = async (newSkill) => {
-    if (user) {
-      const skillId = await addSkill(user.uid, newSkill);
-      setSkills(prevSkills => [...prevSkills, { ...newSkill, id: skillId }]);
-    }
+   setSkills(prevSkills => [...prevSkills, newSkill]);
   };
+   
+    // if (user) {
+ //     const skillId = await addSkill(user.uid, newSkill);
+   
+ //setSkills(prevSkills => [...prevSkills, { ...newSkill, id: skillId }]);
+  //  }
+  //};
       
   const handleDeleteSkill = async (skillId) => {
     if (user) {
