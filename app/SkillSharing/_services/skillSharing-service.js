@@ -11,7 +11,7 @@ export async function getSkills(userId) {
 
 
   export async function addSkill(userId, skill) {
-    const skillsCol = collection(db, "users", userId, "items");
+    const skillsCol = collection(db, "users", userId, "skills");
     const docRef = await addDoc(skillsCol, skill);
     return docRef.id; // Return the new document ID
   }

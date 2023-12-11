@@ -57,7 +57,7 @@ const SkillAdvice = ({ }) => {
   // Render the component
   return (
     <div style={style.container}>
-     
+     <img src="https://png.pngtree.com/png-vector/20220627/ourmid/pngtree-bubble-speech-logo-design-concept-related-to-consultant-or-translator-png-image_5193557.png" />
       <h1 className="block text-gray-700 text-sm font-bold mb-2">Skill Advice</h1>
       <p style={style.adviceText}>{advice}</p>
       <button style={style.refreshButton} onClick={loadSkillAdvice}>Refresh Advice</button> 

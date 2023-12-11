@@ -2,42 +2,42 @@
 import React, { useState, useEffect } from 'react';
 import SkillList from './skill-list';
 import NewSkill from './new-skill';
-import skillsData from './skills.json';
+//import skillsData from './skills.json';
 import SkillAdvice from './skill-advice';
-//import { useUserAuth } from '../_utils/auth-context';
-//import { getSkills, addSkill, deleteSkill } from '../_services/skillSharing-service'; 
+import { useUserAuth } from '../_utils/auth-context';
+import { getSkills, addSkill, deleteSkill } from '../_services/skillSharing-service'; 
 
 function Page() {
- //   const { user } = useUserAuth();
-    const [skills, setSkills] = useState(skillsData);
+    const { user } = useUserAuth();
+    const [skills, setSkills] = useState([]);
     const [selectedSkillName, setSelectedSkillName] = useState(''); // New state
     
     
-  //async function loadSkills() {
-  //  if (user) {
-  //    const userSkills = await getSkills(user.uid);
-  //    setSkills(userSkills);
-  //  }
- // }
+  async function loadSkills() {
+    if (user) {
+      const userSkills = await getSkills(user.uid);
+      setSkills(userSkills);
+   }
+  }
 
   
-  //useEffect(() => {
-  //  if (user) {
-   //   loadSkills();
-   // }
-  //}, [user]);
+  useEffect(() => {
+    if (user) {
+      loadSkills();
+    }
+  }, [user]);
 
 
   const handleAddSkill = async (newSkill) => {
-   setSkills(prevSkills => [...prevSkills, newSkill]);
+   //setSkills(prevSkills => [...prevSkills, newSkill]);
+ // };
+   
+     if (user) {
+      const skillId = await addSkill(user.uid, newSkill);
+   
+ setSkills(prevSkills => [...prevSkills, { ...newSkill, id: skillId }]);
+    }
   };
-   
-    // if (user) {
- //     const skillId = await addSkill(user.uid, newSkill);
-   
- //setSkills(prevSkills => [...prevSkills, { ...newSkill, id: skillId }]);
-  //  }
-  //};
       
   const handleDeleteSkill = async (skillId) => {
     if (user) {
@@ -52,14 +52,14 @@ function Page() {
       };
 
 
-    //  if (!user) {
-      //  return (
-     //     <div>
-     //       <h1>Access Denied</h1>
-     //       <p>You must be logged in to view the shopping list.</p>
-     //     </div>
-     //   );
-    //  }
+      if (!user) {
+        return (
+          <div>
+            <h1>Access Denied</h1>
+            <p>You must be logged in to view the shopping list.</p>
+          </div>
+        );
+      }
       const style = {
         container: {
             display: 'flex',
@@ -87,6 +87,6 @@ function Page() {
           </div>
         </div>
   );
-}
 
+      }
 export default Page;
