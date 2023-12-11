@@ -4,11 +4,11 @@ import SkillList from './skill-list';
 import NewSkill from './new-skill';
 import skillsData from './skills.json';
 import SkillAdvice from './skill-advice';
-import { useUserAuth } from '../_utils/auth-context';
+//import { useUserAuth } from '../_utils/auth-context';
 //import { getSkills, addSkill, deleteSkill } from '../_services/skillSharing-service'; 
 
 function Page() {
-    const { user } = useUserAuth();
+ //   const { user } = useUserAuth();
     const [skills, setSkills] = useState(skillsData);
     const [selectedSkillName, setSelectedSkillName] = useState(''); // New state
     
@@ -52,14 +52,14 @@ function Page() {
       };
 
 
-      if (!user) {
-        return (
-          <div>
-            <h1>Access Denied</h1>
-            <p>You must be logged in to view the shopping list.</p>
-          </div>
-        );
-      }
+    //  if (!user) {
+      //  return (
+     //     <div>
+     //       <h1>Access Denied</h1>
+     //       <p>You must be logged in to view the shopping list.</p>
+     //     </div>
+     //   );
+    //  }
       const style = {
         container: {
             display: 'flex',
