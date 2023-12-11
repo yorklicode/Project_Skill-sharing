@@ -1,0 +1,64 @@
+[
+    {
+        "id": "1",
+        "advice": "Never give up on your dreams, even when obstacles seem insurmountable.",
+        "quote": "Harriet Tubman",
+        "category": "Motivation"
+      }
+      ,
+    {
+        "id": "2",
+        "advice": "Learning is a treasure that will follow its owner everywhere.",
+        "quote": "Chinese Proverb",
+        "category": "Education"
+    },
+    {
+        "id": "3",
+        "advice": "Success is not the key to happiness. Happiness is the key to success.",
+        "quote": "Albert Schweitzer",
+        "category": "Life"
+    },
+    {
+        "id": "4",
+        "advice": "Be the change that you wish to see in the world.",
+        "quote": "Mahatma Gandhi",
+        "category": "Inspiration"
+    },
+    {
+        "id": "5",
+        "advice": "Courage doesn't always roar. Sometimes courage is the quiet voice at the end of the day saying, 'I will try again tomorrow.'",
+        "quote": "Mary Anne Radmacher",
+        "category": "Courage"
+    },
+    {
+        "id": "6",
+        "advice": "Innovation distinguishes between a leader and a follower.",
+        "quote": "Steve Jobs",
+        "category": "Innovation"
+    },
+    {
+        "id": "7",
+        "advice": "A friend is someone who knows all about you and still loves you.",
+        "quote": "Elbert Hubbard",
+        "category": "Relationships"
+    },
+    {
+        "id": "8",
+        "advice": "Hard work beats talent when talent doesn't work hard.",
+        "quote": "Tim Notke",
+        "category": "Work Ethic"
+    },
+    {
+        "id": "9",
+        "advice": "Mindfulness is a way of befriending ourselves and our experience.",
+        "quote": "Jon Kabat-Zinn",
+        "category": "Mindfulness"
+    },
+    {
+        "id": "10",
+        "advice": "Happiness is not something ready made. It comes from your own actions.",
+        "quote": "Dalai Lama",
+        "category": "Happiness"
+    }
+  ]
+  
