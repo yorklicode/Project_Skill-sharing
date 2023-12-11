@@ -13,19 +13,19 @@ function Page() {
     const [selectedSkillName, setSelectedSkillName] = useState(''); // New state
     
     
-  async function loadSkills() {
-    if (user) {
-      const userSkills = await getSkills(user.uid);
-      setSkills(userSkills);
-    }
-  }
+  //async function loadSkills() {
+  //  if (user) {
+  //    const userSkills = await getSkills(user.uid);
+  //    setSkills(userSkills);
+  //  }
+ // }
 
   
-  useEffect(() => {
-    if (user) {
-      loadSkills();
-    }
-  }, [user]);
+  //useEffect(() => {
+  //  if (user) {
+   //   loadSkills();
+   // }
+  //}, [user]);
 
 
   const handleAddSkill = async (newSkill) => {
